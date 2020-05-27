@@ -1,0 +1,84 @@
+// Number 1
+fun comparenumbers (x : Int, y : Int): Int 
+{
+    var number : Int = 0;
+    if(x < y)
+    {
+        number = 1
+    }
+    else if(x > y)
+    {
+        number = -1
+    }
+    else(x == y)
+    {
+        number = 0
+    }
+    return number
+}
+
+
+
+// Number 2
+fun determineAge( age : Int):String
+{
+    var group : String = ""
+    when(age)
+    {
+        in 0..20 -> group = "Family"
+        in 21..59 -> group = "Normal"
+        in 60..100 -> group = "Senior"
+    }
+    return group
+}
+
+
+
+//Number 3
+fun level(cardPoints : Int): String
+{
+    val cardLevel : String
+    when(cardPoints)
+    {
+        in 0..999 -> cardLevel = "pearl"
+        in 0..4999 -> cardLevel = "silver"
+        in 0..9999 -> cardLevel = "gold"
+        else -> cardLevel = "platinum"
+    }
+    return cardLevel;
+}
+
+
+
+//Number 4
+fun readFile(fileName : String)
+{
+    val inputStream: InputStream = File(fileName).inputStream()
+    val inputString = inputStream.bufferedReader().use { it.readText() }
+    println(inputString)
+}
+
+
+
+//Number 5
+open class Person(age: Int, name: String) {
+    init {
+        println("My name is $name.")
+        println("My age is $age")
+    }
+}
+class MathTeacher(age: Int, name: String): Person(age, name) {
+    fun teachMath() {
+        println("I'm a teacher")
+    }
+}
+class Footballer(age: Int, name: String): Person(age, name) {
+    fun playFootball() {
+        println("I'm a Manchester United Player")
+    }
+}
+class Business(age: Int, name: String): Person(age, name) {
+    fun runBusiness() {
+        println("I'm make Money")
+    }
+}
